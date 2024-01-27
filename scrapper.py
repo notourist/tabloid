@@ -1,3 +1,4 @@
+import base64
 from os import getcwd
 from random import randint
 from time import sleep
@@ -35,7 +36,7 @@ human_room_names = [
     'Raum 31.2 (6)',
 ]
 
-url = "https://b.anny.eu/api/v1/resources/gruppenraume-kit-bibliothek-sud/children"
+url = base64.b64decode("aHR0cHM6Ly9iLmFubnkuZXUvYXBpL3YxL3Jlc291cmNlcy9ncnVwcGVucmF1bWUta2l0LWJpYmxpb3RoZWstc3VkL2NoaWxkcmVu")
 headers = {
     "User-Agent": "i_only_do_this_so_i_have_a_per_day_table_view_of_all_group_rooms_bitcheeeesss"
 }
@@ -166,6 +167,7 @@ def do_it() -> dict:
 
 
 if __name__ == "__main__":
+    print(f"URL: {url}")
     pages = do_it()
     for day_page in pages.keys():
         file_name = day_page + ".html"
