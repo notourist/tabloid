@@ -148,7 +148,7 @@ def html_doc(day: str, thead: str, tbody: str) -> str:
             '<head><meta charset="utf-8">'
             f'<title>tabloid {day} ({now.isoformat()})</title>'
             '<style>div {width: 100px;height: 18px; }</style></head><body>'
-            f'<a href="{before}.html">{before}</a>  '
+            f'<a href="{before}.html">{before}</a> {datetimeday.isoformat()} '
             f'<a href="{after}.html">{after}</a>'
             f'<table> <thead>{thead}</thead>'
             f'<tbody>{tbody}</tbody></table></body></html>')
