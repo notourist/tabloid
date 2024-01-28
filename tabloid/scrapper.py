@@ -109,7 +109,7 @@ def request_all() -> dict:
             if time_range[0] < now:
                 continue
             resp = request_single_range(*time_range)
-            sleep(randint(5, 10) / 10)
+            sleep(randint(1, 4) / 10)
             if resp.status_code != 200:
                 print("error")
             available_rooms = get_available_rooms_idx(resp.json()["data"])
