@@ -36,10 +36,12 @@ human_room_names = [
     'Raum 31.2 (6)',
 ]
 
-url = base64.b64decode("aHR0cHM6Ly9iLmFubnkuZXUvYXBpL3YxL3Jlc291cmNlcy9ncnVwcGVucmF1bWUta2l0LWJpYmxpb3RoZWstc3VkL2NoaWxkcmVu")
+url = base64.b64decode(
+    "aHR0cHM6Ly9iLmFubnkuZXUvYXBpL3YxL3Jlc291cmNlcy9ncnVwcGVucmF1bWUta2l0LWJpYmxpb3RoZWstc3VkL2NoaWxkcmVu")
 headers = {
     "User-Agent": "i_only_do_this_so_i_have_a_per_day_table_view_of_all_group_rooms_bitcheeeesss"
 }
+output_dir = "/var/www/html/tabloid"
 
 default_params = {
     'page[number]': 1,
@@ -171,6 +173,6 @@ if __name__ == "__main__":
     pages = do_it()
     for day_page in pages.keys():
         file_name = day_page + ".html"
-        with open(file_name, "w+") as file:
-            print(f"Writing {file_name} to {getcwd()}")
+        with open(f"{output_dir}/{file_name}", "w+") as file:
+            print(f"Writing {file_name} to {output_dir}")
             file.write(pages[day_page])
