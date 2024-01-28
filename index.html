@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer>
+        today = new Date().toISOString()
+        re = /[0-9]{4}-[0-9]{2}-[0-9]{2}/g
+        matches = [...today.matchAll(re)]
+        window.location.href = matches[0] + ".html"
+    </script>
+</head>
+<body>
+</body>
+</html>
